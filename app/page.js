@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import { SparklesIcon, StarIcon, HomeIcon, GlobeAltIcon, ExclamationTriangleIcon, PlayCircleIcon } from '@heroicons/react/24/outline';
+import { SparklesIcon, StarIcon, HomeIcon, GlobeAltIcon, ExclamationTriangleIcon, PlayCircleIcon, PencilIcon, TrashIcon } from '@heroicons/react/24/outline';
 
 export default function Home() {
   const [suche, setSuche] = useState("");
@@ -270,7 +270,8 @@ export default function Home() {
     <main
       className="flex min-h-screen flex-col items-center justify-center p-4"
       style={{
-        background: `linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)), url('/background.jpg') center center / cover no-repeat fixed`,
+        background: `linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,0.85) 120px, rgba(255,255,255,0.85) 100%), url('/background.jpg') center top / cover no-repeat fixed`,
+        backgroundPosition: undefined
       }}
     >
       <div className="relative z-10 flex flex-col items-center text-center mt-8 text-white">
@@ -299,14 +300,6 @@ export default function Home() {
               >
                 Suchen
               </button>
-              {isLaden && (
-                <img
-                  src="/ladeiconneu.png"
-                  alt="Lädt..."
-                  className="lade-spinner"
-                  style={{ display: 'inline-block' }}
-                />
-              )}
             </div>
           </form>
         </div>
@@ -464,18 +457,16 @@ export default function Home() {
             const gefiltert = gespeicherteEintraege
               .filter(eintrag => {
                 // Tag-Filter
-                if (filter && eintrag && eintrag.tags && eintrag.tags.includes(filter)) {
-                  return true;
+                if (tagFilter.length > 0 && eintrag.tags && Array.isArray(eintrag.tags)) {
+                  if (!eintrag.tags.some(tag => tagFilter.includes(tag))) {
+                    return false;
+                  }
                 }
                 // Suchtext-Filter
-                if (filter && eintrag && eintrag.name && eintrag.name.toLowerCase().includes(filter.toLowerCase())) {
-                  return true;
+                if (sammlungSuche && eintrag.name && !eintrag.name.toLowerCase().includes(sammlungSuche.toLowerCase())) {
+                  return false;
                 }
-                if (filter && eintrag && eintrag.beschreibung && eintrag.beschreibung.toLowerCase().includes(filter.toLowerCase())) {
-                  return true;
-                }
-                // Wenn kein Filter gesetzt ist, alles anzeigen
-                return !filter;
+                return true;
               })
               .sort((a, b) => {
                 const nameA = a.name || '';
@@ -483,9 +474,9 @@ export default function Home() {
                 if (sortierung === "az") {
                   return nameA.localeCompare(nameB);
                 } else if (sortierung === "neu") {
-                  return (b.timestamp || 0) - (a.timestamp || 0);
+                  return new Date(b.timestamp) - new Date(a.timestamp);
                 } else if (sortierung === "alt") {
-                  return (a.timestamp || 0) - (b.timestamp || 0);
+                  return new Date(a.timestamp) - new Date(b.timestamp);
                 }
                 return 0;
               });
@@ -501,24 +492,31 @@ export default function Home() {
                 // Index für Akkordeon und EditBuffer anpassen:
                 const globalIdx = gespeicherteEintraege.indexOf(eintrag);
                 return (
-                  <div key={globalIdx} className="card-mood" style={{ background: 'rgba(191, 200, 184, 0.5)', backgroundColor: 'rgba(191, 200, 184, 0.5)', opacity: 1, zIndex: 10 }}>
-                    <div className="flex justify-between items-center mb-1 cursor-pointer" onClick={() => setOffen(o => ({...o, [globalIdx]: !o[globalIdx]}))}>
-                      <span className="card-mood-title flex items-center gap-2">
-                        {/* Icon für das erste Tag */}
-                        {eintrag.tags && eintrag.tags.length > 0 && (
-                          <span className="text-lg">{TAG_ICONS[eintrag.tags[0]] || <SparklesIcon className="w-5 h-5 text-green-700" />}</span>
-                        )}
-                        {eintrag.name}
-                        <span className="text-xs ml-2">{offen[globalIdx] ? "▲" : "▼"}</span>
-                      </span>
-                      <div className="card-mood-tags">
-                        {eintrag.tags && eintrag.tags.map((tag, i) => (
-                          <span key={i} className="card-mood-tag">{tag}</span>
-                        ))}
+                  <div key={globalIdx} className="card-mood w-full max-w-xs sm:max-w-md md:max-w-2xl mx-auto p-4 md:p-6 mb-6 text-sm md:text-base break-words rounded-2xl shadow bg-gradient-to-br from-white to-green-50 border border-green-100 hover:shadow-lg hover:scale-[1.02] transition-transform duration-200" style={{ opacity: 1, zIndex: 10 }}>
+                    <div className="flex justify-between items-center mb-2">
+                      <span className="text-lg font-bold text-green-900">{eintrag.name}</span>
+                      <div className="flex gap-2 items-center">
+                        <button onClick={() => handleEditSpeichern(globalIdx)} title="Bearbeiten" className="p-1 rounded hover:bg-green-100">
+                          <PencilIcon className="w-4 h-4 text-green-400 hover:text-green-700" />
+                        </button>
+                        <button onClick={() => handleLoeschen(globalIdx)} title="Löschen" className="p-1 rounded hover:bg-red-100">
+                          <TrashIcon className="w-4 h-4 text-red-300 hover:text-red-600" />
+                        </button>
                       </div>
                     </div>
+                    <div>
+                      {eintrag.tags && eintrag.tags.map((tag, i) => (
+                        <span key={i} className="bg-green-100 text-green-700 rounded-full px-3 py-1 text-xs mr-2">{tag}</span>
+                      ))}
+                    </div>
+                    <button
+                      className="mt-3 mb-2 text-green-700 underline text-xs md:text-sm hover:text-green-900 focus:outline-none"
+                      onClick={() => setOffen(o => ({ ...o, [globalIdx]: !o[globalIdx] }))}
+                    >
+                      {offen[globalIdx] ? 'Details ausblenden' : 'Details anzeigen'}
+                    </button>
                     {offen[globalIdx] && (
-                      <div className="mt-4 text-left">
+                      <div className="mt-2 text-left transition-all duration-300">
                         {/* Überarbeiteter Bearbeitungsbereich mit allen Feldern */}
                         <div className="space-y-4">
                           <div>
@@ -548,36 +546,6 @@ export default function Home() {
                               rows={7}
                             />
                           </div>
-                          <div>
-                            <label className="font-bold text-sm text-green-800">Eigene Notizen</label>
-                            <textarea
-                              className="w-full p-2 border border-gray-300 bg-white rounded text-sm mt-1"
-                              value={editBuffer[globalIdx]?.notiz || ""}
-                              onChange={e => handleEditBufferChange(globalIdx, "notiz", e.target.value)}
-                              rows={3}
-                            />
-                          </div>
-                        </div>
-                        
-                        <div className="flex items-center justify-between mt-4">
-                          <div>
-                            <button
-                              onClick={() => handleEditSpeichern(globalIdx)}
-                              className="text-white px-4 py-2 rounded transition text-sm"
-                              style={{ backgroundColor: '#009975' }}
-                            >
-                              Änderungen speichern
-                            </button>
-                            {editSuccess[globalIdx] && (
-                              <span className="text-green-600 text-sm ml-2">Gespeichert!</span>
-                            )}
-                          </div>
-                          <button onClick={() => handleLoeschen(globalIdx)} className="text-red-500 hover:text-red-700 text-xs font-semibold">
-                            Eintrag löschen
-                          </button>
-                        </div>
-                        <div className="text-xs text-gray-500 mt-2">
-                          {eintrag.timestamp ? `Gespeichert am: ${new Date(eintrag.timestamp).toLocaleString('de-DE')}` : ''}
                         </div>
                       </div>
                     )}
@@ -605,15 +573,6 @@ export default function Home() {
             </>;
           })()}
         </div>
-      )}
-
-      {isLaden && (
-        <img
-          src="/ladeiconneu.png"
-          alt="Lädt..."
-          className="lade-spinner"
-          style={{ display: 'inline-block' }}
-        />
       )}
     </main>
   );
