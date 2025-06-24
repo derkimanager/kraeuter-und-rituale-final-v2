@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Stiel -->
+  <path d="M32 60 Q33 50 32 40 Q31 50 32 60" stroke="#3B7D3A" stroke-width="2.2" stroke-linecap="round"/>
+  <!-- Blatt (gezackt) -->
+  <path d="M36 54 Q38 56 36 58 Q38 57 39 59 Q37 58 36 60" stroke="#3B7D3A" stroke-width="1.2" fill="none"/>
+  <!-- Pusteblume-Kugel -->
+  <circle cx="32" cy="28" r="12" fill="none" stroke="#B7E283" stroke-width="2"/>
+  <!-- Viele feine Strahlen -->
+  <g stroke="#3B7D3A" stroke-width="0.7">
+    <line x1="32" y1="16" x2="32" y2="8" />
+    <line x1="32" y1="40" x2="32" y2="48" />
+    <line x1="44" y1="28" x2="52" y2="28" />
+    <line x1="20" y1="28" x2="12" y2="28" />
+    <line x1="40.5" y1="19.5" x2="46.5" y2="14.5" />
+    <line x1="23.5" y1="36.5" x2="18.5" y2="41.5" />
+    <line x1="23.5" y1="19.5" x2="18.5" y2="14.5" />
+    <line x1="40.5" y1="36.5" x2="46.5" y2="41.5" />
+    <line x1="37" y1="16.5" x2="40" y2="10" />
+    <line x1="27" y1="16.5" x2="24" y2="10" />
+    <line x1="37" y1="39.5" x2="40" y2="46" />
+    <line x1="27" y1="39.5" x2="24" y2="46" />
+  </g>
+  <!-- Abfliegende Samen -->
+  <g stroke="#3B7D3A" stroke-width="0.5">
+    <line x1="50" y1="10" x2="54" y2="6" />
+    <circle cx="54" cy="6" r="0.8" fill="#B7E283"/>
+    <line x1="56" y1="18" x2="60" y2="14" />
+    <circle cx="60" cy="14" r="0.7" fill="#B7E283"/>
+  </g>
+  <!-- Blütenmitte -->
+  <circle cx="32" cy="28" r="2.5" fill="#B7E283" stroke="#3B7D3A" stroke-width="0.8"/>
+</svg> 

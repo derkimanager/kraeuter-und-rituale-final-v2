@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Stiel -->
+  <path d="M32 60C32 60 32 44 32 36" stroke="#3B7D3A" stroke-width="2.2" stroke-linecap="round"/>
+  <!-- Blütenmitte -->
+  <circle cx="32" cy="32" r="5" fill="#B7E283" stroke="#3B7D3A" stroke-width="1.5"/>
+  <!-- Pusteblume-Strahlen -->
+  <g stroke="#3B7D3A" stroke-width="1.2">
+    <line x1="32" y1="12" x2="32" y2="25" />
+    <line x1="32" y1="39" x2="32" y2="52" />
+    <line x1="12" y1="32" x2="25" y2="32" />
+    <line x1="39" y1="32" x2="52" y2="32" />
+    <line x1="20" y1="20" x2="28" y2="28" />
+    <line x1="44" y1="20" x2="36" y2="28" />
+    <line x1="20" y1="44" x2="28" y2="36" />
+    <line x1="44" y1="44" x2="36" y2="36" />
+  </g>
+  <!-- Kleine Samen -->
+  <circle cx="32" cy="12" r="1.5" fill="#B7E283" stroke="#3B7D3A" stroke-width="0.8"/>
+  <circle cx="32" cy="52" r="1.2" fill="#B7E283" stroke="#3B7D3A" stroke-width="0.6"/>
+  <circle cx="12" cy="32" r="1.2" fill="#B7E283" stroke="#3B7D3A" stroke-width="0.6"/>
+  <circle cx="52" cy="32" r="1.2" fill="#B7E283" stroke="#3B7D3A" stroke-width="0.6"/>
+  <circle cx="20" cy="20" r="1" fill="#B7E283" stroke="#3B7D3A" stroke-width="0.5"/>
+  <circle cx="44" cy="20" r="1" fill="#B7E283" stroke="#3B7D3A" stroke-width="0.5"/>
+  <circle cx="20" cy="44" r="1" fill="#B7E283" stroke="#3B7D3A" stroke-width="0.5"/>
+  <circle cx="44" cy="44" r="1" fill="#B7E283" stroke="#3B7D3A" stroke-width="0.5"/>
+</svg> 

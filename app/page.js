@@ -274,9 +274,20 @@ export default function Home() {
         backgroundPosition: undefined
       }}
     >
+      {/* Ladeicon Overlay */}
+      {isLaden && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-white/60 backdrop-blur-sm">
+          <img
+            src="/pusteblume.png"
+            alt="Lädt..."
+            className="w-32 h-32 animate-spin-slow opacity-80 rounded-full"
+            style={{ filter: 'drop-shadow(0 2px 8px #3B7D3A33)' }}
+          />
+        </div>
+      )}
       <div className="relative z-10 flex flex-col items-center text-center mt-8 text-white">
         <div className="flex flex-col items-center justify-center">
-          <img src="/Logo.png" alt="Logo" className="h-40 w-40 md:h-48 md:w-48 mb-4" />
+          <img src="/Logo2.png" alt="Logo" className="h-40 w-40 md:h-48 md:w-48 mb-4" />
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight" style={{ color: '#2E403B' }}>
             HEILKRÄUTER & RITUALE
           </h1>

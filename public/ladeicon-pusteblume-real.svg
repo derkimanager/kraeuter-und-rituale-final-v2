@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="96" height="96" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g>
+    <ellipse cx="48" cy="48" rx="30" ry="30" fill="#fff" fill-opacity="0.0"/>
+    <g stroke="#3B7D3A" stroke-width="1.1">
+      <line x1="48" y1="48" x2="48" y2="10"/>
+      <line x1="48" y1="48" x2="80" y2="30"/>
+      <line x1="48" y1="48" x2="16" y2="30"/>
+      <line x1="48" y1="48" x2="80" y2="66"/>
+      <line x1="48" y1="48" x2="16" y2="66"/>
+      <line x1="48" y1="48" x2="48" y2="86"/>
+      <!-- viele weitere feine Linien für Samen -->
+      <line x1="48" y1="48" x2="60" y2="18"/>
+      <line x1="48" y1="48" x2="36" y2="18"/>
+      <line x1="48" y1="48" x2="78" y2="48"/>
+      <line x1="48" y1="48" x2="18" y2="48"/>
+      <line x1="48" y1="48" x2="70" y2="70"/>
+      <line x1="48" y1="48" x2="26" y2="70"/>
+      <line x1="48" y1="48" x2="70" y2="26"/>
+      <line x1="48" y1="48" x2="26" y2="26"/>
+      <!-- ... -->
+    </g>
+    <!-- Blütenmitte -->
+    <circle cx="48" cy="48" r="4" fill="#B7E283" stroke="#3B7D3A" stroke-width="1"/>
+    <!-- Stiel -->
+    <path d="M48 86 Q50 92 52 96" stroke="#3B7D3A" stroke-width="2.2" stroke-linecap="round"/>
+  </g>
+</svg> 
