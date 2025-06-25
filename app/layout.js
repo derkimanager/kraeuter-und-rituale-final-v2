@@ -23,6 +23,14 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
+        <footer className="w-full py-6 mt-12 bg-green-50 border-t border-green-200 text-center text-sm text-green-900">
+          <nav className="flex flex-wrap justify-center gap-6">
+            <a href="/impressum" className="hover:underline">Impressum</a>
+            <a href="/datenschutz" className="hover:underline">Datenschutz</a>
+            <a href="/haftungsausschluss" className="hover:underline">Haftungsausschluss</a>
+            <a href="/cookies" className="hover:underline">Cookies</a>
+          </nav>
+        </footer>
       </body>
     </html>
   );

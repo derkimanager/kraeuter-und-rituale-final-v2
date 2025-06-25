@@ -1,0 +1,41 @@
+2 | Datenschutzerklärung (DSGVO)
+
+2.1 Verantwortliche Stelle
+
+Johanna BärenzSchützenstraße 107, 22761 Hamburg, DeutschlandE‑Mail: der.ki.manager@gmail.com
+
+2.2 Allgemeine Hinweise
+
+Diese Datenschutzerklärung informiert Sie über Art, Umfang und Zweck der Verarbeitung personenbezogener Daten bei Besuch dieser rein informativen Privat­website.
+
+2.3 Hosting
+
+Diese Website wird von Vercel Inc. (440 N. Barranca Ave #4133, Covina, CA 91723, USA) gehostet. Die Daten können auf Servern außerhalb der Europäischen Union verarbeitet werden. Vercel sichert den Schutz Ihrer Daten durch den Abschluss von Standardvertragsklauseln gemäß Art. 46 Abs. 2 lit. c DSGVO.
+
+2.4 Server‑Log‑Files
+
+Bei jedem Seitenaufruf übermittelt Ihr Browser automatisch Nutzungs­daten, die in sogenannten Server‑Log‑Files gespeichert werden (u. a. gekürzte IP‑Adresse, Datum, Uhrzeit, aufgerufene Datei, User‑Agent). Die Verarbeitung dient der technischen Bereitstellung und Wahrung der IT‑Sicherheit.Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse).
+
+2.5 Cookies
+
+Diese Website setzt ausschließlich technisch notwendige Cookies, die für den Betrieb und die Sicherheit erforderlich sind.Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO.
+
+2.6 Kontaktaufnahme
+
+Eine direkte Kontaktaufnahme ist nur per E‑Mail möglich. Die mitgeteilten Daten werden ausschließlich zur Bearbeitung Ihrer Anfrage verarbeitet.Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO.
+
+2.7 Kein Tracking, keine Drittinhalte
+
+Es werden keine Analyse‑ oder Marketing‑Tools eingesetzt und keine Drittinhalte (z. B. YouTube‑Videos, Google Fonts, Social‑Plugins) eingebettet.
+
+2.8 Betroffenenrechte
+
+Sie haben nach der DSGVO das Recht auf Auskunft (Art. 15), Berichtigung (Art. 16), Löschung (Art. 17), Einschränkung (Art. 18), Datenübertragbarkeit (Art. 20) sowie Widerspruch (Art. 21). Wenden Sie sich hierzu an die oben genannte E‑Mail‑Adresse.
+
+2.9 SSL/TLS‑Verschlüsselung
+
+Diese Website nutzt durchgehend HTTPS mit SSL/TLS‑Verschlüsselung, um die Übertragung vertraulicher Inhalte zu schützen.
+
+2.10 Änderungen dieser Datenschutzerklärung
+
+Wir behalten uns vor, diese Erklärung zu aktualisieren, damit sie stets den aktuellen rechtlichen Anforderungen entspricht.Stand: 25. 06. 2025

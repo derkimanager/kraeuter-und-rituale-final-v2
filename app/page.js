@@ -287,7 +287,9 @@ export default function Home() {
       )}
       <div className="relative z-10 flex flex-col items-center text-center mt-8 text-white">
         <div className="flex flex-col items-center justify-center">
-          <img src="/Logo2.png" alt="Logo" className="h-40 w-40 md:h-48 md:w-48 mb-4" />
+          <a href="/">
+            <img src="/Logo2.png" alt="Logo" className="h-40 w-40 md:h-48 md:w-48 mb-4 cursor-pointer" />
+          </a>
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight" style={{ color: '#2E403B' }}>
             HEILKRÄUTER & RITUALE
           </h1>
